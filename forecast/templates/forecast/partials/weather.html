@@ -7,10 +7,14 @@
     <div class="row">    
         {% for forecast in forecasts %}
             <div class="col">
-                <h4>{{ forecast.date }}</h4>
-                <p class="h6">H:{{ forecast.high }} / L:{{ forecast.low }}</p>
-                <p class="h6">{{ forecast.main }}</p>
-                <img src="{{ forecast.icon }}">
+                <div class="card mb-3 ">
+                    <div class="card-body">
+                        <h6>{{ forecast.date }}</h6>
+                        <p class="h6">H:{{ forecast.high }} / L:{{ forecast.low }}</p>
+                        <p class="h6">{{ forecast.main }}</p>
+                        <img src="{{ forecast.icon }}">
+                    </div>
+                </div>
             </div>
         {% endfor %}
         <br>

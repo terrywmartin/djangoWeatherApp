@@ -45,7 +45,7 @@ def get_forecast(lat, lon):
     forecasts = []
     for day in response['list']:
         forecast = {
-            "date": str(datetime.fromtimestamp(day['dt']).strftime('%m-%d-%Y, %H:%M:%S')),
+            "date": str(datetime.fromtimestamp(day['dt']).strftime('%m-%d-%Y  %H:%M:%S')),
             "high" : str(int(day['main']['temp_max'])),
             "low" : str(int(day['main']['temp_min'])),
             "main": day['weather'][0]['main'],
