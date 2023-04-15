@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+
+<div x-data="{ }">
+    <h2>Display Weather and Forecast</h2>
+    <hr>
+ 
+    <div  >
+        <br>
+        <form id='zip_form' hx-post="{% url 'forecast:get_weather' %}"  hx-target="#weather" hx-trigger="submit"  >
+            {% csrf_token %}
+            <div class="form-outline mx-auto  col col-lg-4 col-md-8 col-sm-12">
+                <input type="number" pattern="[0-9]{5}" id="zip" name="zip" class="form-control" placeholder="Enter Zip Code..." autofocus/>
+                
+            </div>
+            <br>
+            <div class="d-grid mx-auto col col-lg-4 col-sm-12 col-md-8">
+            
+            <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+            </div>
+            <div id="weather" class="mt-10 mx-auto col  col-sm-12 col-md-8"  hx-swap="outerHTML swap:1s">
+        
+
+            </div>
+        </form>
+    </div>
+
+   
+</div>
+{% endblock %}

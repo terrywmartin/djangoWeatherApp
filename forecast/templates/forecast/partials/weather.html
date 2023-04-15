@@ -1,0 +1,17 @@
+ <div class="row">
+        <div class="col-12">
+            <p class="h4">Currently<br><img src="{{ current.icon }}"> {{ current.main }} &amp; {{ current.temp }}&#8457;</p>
+            <br>
+        </div>
+    </div>
+    <div class="row">    
+        {% for forecast in forecasts %}
+            <div class="col">
+                <h4>{{ forecast.date }}</h4>
+                <p class="h6">H:{{ forecast.high }} / L:{{ forecast.low }}</p>
+                <p class="h6">{{ forecast.main }}</p>
+                <img src="{{ forecast.icon }}">
+            </div>
+        {% endfor %}
+        <br>
+    </div>
