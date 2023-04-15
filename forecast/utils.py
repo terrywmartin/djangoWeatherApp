@@ -1,7 +1,6 @@
 import requests
 import os
 from datetime import datetime
-import json
 
 
 def get_geocode_lon_lat(zip_code, country_code):

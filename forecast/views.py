@@ -1,22 +1,11 @@
 from django.shortcuts import render
 from django.views import View
 
-import json
-import os
-
 from .utils import get_geocode_lon_lat, get_weather, get_forecast
 
 # Create your views here.
-class ForecastGetForecast(View):
-    def get(self, request):
-        pass
-
-    def post(self, request):
-        pass
 
 class ForecastGetWeather(View):
-    def get(self, request):
-        pass
 
     def post(self, request):
         zip_code = request.POST.get('zip', None)
@@ -33,11 +22,3 @@ class ForecastGetWeather(View):
             'forecasts': forecasts
         }
         return render(request, 'forecast/partials/weather.html', context)
-
-
-class ForecastGetGeocode(View):
-    def get(self, request):
-        pass
-
-    def post(self, request):
-        pass
